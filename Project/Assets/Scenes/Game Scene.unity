@@ -3678,8 +3678,10 @@ MonoBehaviour:
   cellCount: {x: 20, y: 20}
   electricFieldArrowPrefab: {fileID: 541208013452328112}
   electricField: []
-  particlePositions: []
-  particleVelocities: []
+  particlePositions:
+  - {x: 0, y: 0}
+  particleVelocities:
+  - {x: 0, y: 0}
   particleElements:
   - {fileID: 182680210}
   chargePositions:
