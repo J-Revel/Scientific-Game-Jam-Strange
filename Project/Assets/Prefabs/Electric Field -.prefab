@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 5821313917292572101}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.69, y: 0, z: 12.45}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5821313917639007278}
@@ -46,7 +46,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fieldType: 1
-  charge: -20
+  active: 1
+  charge: -5
+  range: 3
+  displayCharge: 0
+  appearDisappearDuration: 1
+  displayTransform: {fileID: 5821313917639007278}
+  positiveChargeMaterial: {fileID: 2100000, guid: 2d49bed75f6f39f419fe7b1d106b7b31, type: 2}
+  negativeChargeMaterial: {fileID: 2100000, guid: 238a591e17ba3d94e9813f21a6c90bd5, type: 2}
 --- !u!1 &5821313917639007277
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,7 +82,7 @@ Transform:
   m_GameObject: {fileID: 5821313917639007277}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5821313917292572102}

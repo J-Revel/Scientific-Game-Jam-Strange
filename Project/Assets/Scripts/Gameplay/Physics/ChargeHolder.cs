@@ -13,11 +13,19 @@ public class ChargeHolder : MonoBehaviour
     public FieldType fieldType;
     public bool active = true;
     public float charge = 10;
+    public float range = 5;
     public float displayCharge = 0;
     public float appearDisappearDuration = 1;
+    public Transform displayTransform;
+    public Material positiveChargeMaterial;
+    public Material negativeChargeMaterial;
 
     private IEnumerator Start()
     {
+        foreach(Renderer renderer in GetComponentsInChildren<Renderer>())
+        {
+            renderer.material = charge > 0 ? positiveChargeMaterial : negativeChargeMaterial;
+        }
         switch(fieldType)
         {
             case FieldType.Electric:
@@ -31,6 +39,8 @@ public class ChargeHolder : MonoBehaviour
         {
             float f = time / appearDisappearDuration;
             f = 1 - (1-f) * (1-f);
+            if(displayTransform != null)
+                displayTransform.localScale = Vector3.one * f;
             displayCharge = charge * f;
             yield return null;
         }
@@ -42,6 +52,8 @@ public class ChargeHolder : MonoBehaviour
         {
             float f = time / appearDisappearDuration;
             f = 1 - (1-f) * (1-f);
+            if(displayTransform != null)
+                displayTransform.localScale = Vector3.one * (1 - f);
             displayCharge = charge * (1 - f);
             yield return null;
         }

@@ -8,6 +8,7 @@ public class HoleSpawner : MonoBehaviour
     public float minHoleRadius = 0.5f, maxHoleRadius = 2;
     public ScaleInOut holePrefab;
     public float spawnInterval = 3;
+    public float holeDuration = 3;
     IEnumerator Start()
     {
         while(true)
@@ -17,6 +18,7 @@ public class HoleSpawner : MonoBehaviour
             float distance = Random.Range(0, spawnRadius);
             ScaleInOut hole = Instantiate(holePrefab, transform.position + distance * (Vector3.right * Mathf.Cos(angle) + Vector3.forward * Mathf.Sin(angle)), Quaternion.identity);
             hole.targetScale = Random.Range(minHoleRadius, maxHoleRadius);
+            hole.stayDuration = holeDuration;
         }
     }
 }

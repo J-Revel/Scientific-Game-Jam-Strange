@@ -5,6 +5,7 @@ using UnityEngine;
 public class ParticleDestroyer : MonoBehaviour
 {
     private new SphereCollider collider;
+    public int destroyCount = 0;
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class ParticleDestroyer : MonoBehaviour
                 ParticlePhysicsManager.instance.particleElements.RemoveAt(i);
                 ParticlePhysicsManager.instance.particlePositions.RemoveAt(i);
                 ParticlePhysicsManager.instance.particleVelocities.RemoveAt(i);
+                destroyCount++;
             }
         }
     }
