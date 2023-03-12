@@ -127,7 +127,7 @@ public class ParticlePhysicsManager : MonoBehaviour
             {
                 magneticFieldArrows[i].rotation = Quaternion.AngleAxis(rotTime * rotationSpeed, magneticField[i]) * Quaternion.LookRotation(magneticField[i]);
                 float force = magneticField[i].magnitude;
-                magneticFieldArrows[i].localScale = Vector3.one * Mathf.Lerp(0, magneticArrowScale, (force - minMagneticForce) / (maxMagneticForce - minMagneticForce));
+                magneticFieldArrows[i].localScale = -Vector3.one * Mathf.Lerp(0, magneticArrowScale, (force - minMagneticForce) / (maxMagneticForce - minMagneticForce));
             }
             else
             {
