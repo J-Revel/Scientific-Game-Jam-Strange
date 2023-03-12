@@ -26,6 +26,7 @@ public class ParticleDestroyer : MonoBehaviour
                 ParticlePhysicsManager.instance.particlePositions.RemoveAt(i);
                 ParticlePhysicsManager.instance.particleVelocities.RemoveAt(i);
                 destroyCount++;
+                particleReceivedDelegate?.Invoke(ParticlePhysicsManager.instance.particleElements[i].charge);
             }
         }
     }

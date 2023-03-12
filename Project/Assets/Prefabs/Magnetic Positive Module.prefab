@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 26126418811828126}
   - component: {fileID: 26126418811828127}
+  - component: {fileID: 4573670201957830091}
   m_Layer: 6
-  m_Name: Magnetic Field +
+  m_Name: Magnetic Positive Module
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,6 +54,20 @@ MonoBehaviour:
   positiveChargeMaterial: {fileID: 0}
   negativeChargeMaterial: {fileID: 0}
   negativeCharge: 0
+--- !u!114 &4573670201957830091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26126418811828120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9801ff0f38c3946b8eacc4b59de5ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 7901379118818736259}
+  highlightMaterial: {fileID: 2100000, guid: 2156ac2a3836e424ea2513cdb0e93aec, type: 2}
 --- !u!1001 &8819952219148493831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118,6 +133,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da714273e55a26e4b99ab12fdb15f45c, type: 3}
+--- !u!23 &7901379118818736259 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: da714273e55a26e4b99ab12fdb15f45c, type: 3}
+  m_PrefabInstance: {fileID: 8819952219148493831}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8549989342252013910 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: da714273e55a26e4b99ab12fdb15f45c, type: 3}

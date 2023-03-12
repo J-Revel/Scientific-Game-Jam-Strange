@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5c39365eb7129434e8c6b46754ca246e
+guid: 9dd95540aa5bd4f41bf93385f056a91c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -39,21 +39,21 @@ TextureImporter:
     wrapU: 0
     wrapV: 0
     wrapW: 0
-  nPOTScale: 0
+  nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 0
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1100
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
-  textureType: 8
+  textureType: 0
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -151,106 +151,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: spritesheet_billes1_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1381
-        height: 1381
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e657b09d3c5e5474186ab2adb28aa9fd
-      internalID: 955569979
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet_billes1_1
-      rect:
-        serializedVersion: 2
-        x: 1381
-        y: 0
-        width: 1381
-        height: 1381
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed273190e183afe4bae9c1df292ff579
-      internalID: -703706715
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet_billes1_2
-      rect:
-        serializedVersion: 2
-        x: 2762
-        y: 0
-        width: 1381
-        height: 1381
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 44ec3c98a394ab44cb9aedf8252e647b
-      internalID: -923711600
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet_billes1_3
-      rect:
-        serializedVersion: 2
-        x: 4143
-        y: 0
-        width: 1381
-        height: 1381
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: daef31f359f63eb4581624a4e362dd4b
-      internalID: -275689685
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 23089edb120c769459e67d8566c0e483
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      spritesheet_billes1_0: 955569979
-      spritesheet_billes1_2: -923711600
-      spritesheet_billes1_3: -275689685
-      spritesheet_billes1_1: -703706715
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

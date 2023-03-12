@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5821313917292572102}
   - component: {fileID: 5821313917292572103}
+  - component: {fileID: 927024190610117882}
   m_Layer: 6
-  m_Name: Electric Field -
+  m_Name: Electric Negative Module
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,6 +54,20 @@ MonoBehaviour:
   positiveChargeMaterial: {fileID: 0}
   negativeChargeMaterial: {fileID: 0}
   negativeCharge: 1
+--- !u!114 &927024190610117882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5821313917292572101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9801ff0f38c3946b8eacc4b59de5ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 6768651528324694904}
+  highlightMaterial: {fileID: 2100000, guid: 2156ac2a3836e424ea2513cdb0e93aec, type: 2}
 --- !u!1001 &5345351738428776444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140,5 +155,10 @@ MeshCollider:
 --- !u!4 &5594658659350951959 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cf19e503d4731b44497f8c3ff7e80427, type: 3}
+  m_PrefabInstance: {fileID: 5345351738428776444}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6768651528324694904 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: cf19e503d4731b44497f8c3ff7e80427, type: 3}
   m_PrefabInstance: {fileID: 5345351738428776444}
   m_PrefabAsset: {fileID: 0}
