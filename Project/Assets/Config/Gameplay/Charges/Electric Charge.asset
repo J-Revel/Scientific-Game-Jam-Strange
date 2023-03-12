@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Electric Charge
   m_EditorClassIdentifier: 
   fieldType: 1
-  charge: 5.5
-  range: 4
+  charge: 3
+  range: 5

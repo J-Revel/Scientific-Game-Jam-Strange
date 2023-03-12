@@ -7,6 +7,8 @@ public class ParticleDestroyer : MonoBehaviour
     private new SphereCollider collider;
     public int destroyCount = 0;
 
+    public System.Action<float> particleReceivedDelegate;
+
     private void Start()
     {
         collider = GetComponent<SphereCollider>();
