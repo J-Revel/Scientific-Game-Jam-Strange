@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4921224842549309001, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_text
-      value: 'Niveau 5 :'
+      value: "Niveau 5 : Magn\xE9tique"
       objectReference: {fileID: 0}
     - target: {fileID: 4921224842609677610, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: targetScene
@@ -405,7 +405,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4921224842549309001, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_text
-      value: 'Niveau 7 :'
+      value: 'Niveau 7 : Tous ensemble !'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921224842549309002, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 550
       objectReference: {fileID: 0}
     - target: {fileID: 4921224842609677610, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: targetScene
@@ -727,7 +731,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4921224842549309001, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_text
-      value: 'Niveau 3 : Nom du niveau'
+      value: 'Niveau 3 : Electrique'
       objectReference: {fileID: 0}
     - target: {fileID: 4921224842609677610, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: targetScene
@@ -823,11 +827,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4921224843457794880, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_text
-      value: "Une charge positive cr\xE9\xE9 un champ \xE9lectrique qui attire les
-        particules n\xE9gatives et repousse les positives ; une charge n\xE9gative
-        cr\xE9\xE9 un champ \xE9lectrique qui attire les particules positives et
-        repousse les n\xE9gatives.\r\nPlacez les champs \xE9lectriques positifs et
-        n\xE9gatifs pour conduire les particules vers leurs \xE9lectrodes respectives.\r\n"
+      value: "Une charge positive cr\xE9e un champ \xE9lectrique qui attire les particules
+        n\xE9gatives et repousse les positives ; une charge n\xE9gative cr\xE9\xE9
+        un champ \xE9lectrique qui attire les particules positives et repousse les
+        n\xE9gatives.\r\nPlacez les champs \xE9lectriques positifs et n\xE9gatifs
+        pour conduire les particules vers leurs \xE9lectrodes respectives.\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4921224843457794880, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_fontSize
@@ -1303,7 +1307,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4921224842549309001, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_text
-      value: 'Niveau 4 :'
+      value: "Niveau 4 : Magn\xE9tisme"
       objectReference: {fileID: 0}
     - target: {fileID: 4921224842609677610, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: targetScene
@@ -2194,7 +2198,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4921224842549309001, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_text
-      value: 'Niveau 6 :'
+      value: 'Niveau 6 : Direction'
       objectReference: {fileID: 0}
     - target: {fileID: 4921224842609677610, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: targetScene
