@@ -5,6 +5,7 @@ using UnityEngine;
 public class ParticlePhysicsManager : MonoBehaviour
 {
     public static ParticlePhysicsManager instance;
+    public LayerMask groundRaycastLayer;
     public float cellSize = 1;
     public Vector2Int cellCount = new Vector2Int(10, 10);
     [System.NonSerialized]
@@ -44,6 +45,11 @@ public class ParticlePhysicsManager : MonoBehaviour
     public float maxForce = 10;
     public float minForce = 0.01f;
 
+    public float maxMagneticForce = 10;
+    public float minMagneticForce = 0.05f;
+    public float arenaRadius = 10;
+    public Transform arenaCenter;
+
     void Awake()
     {
         instance = this;
@@ -59,8 +65,12 @@ public class ParticlePhysicsManager : MonoBehaviour
         {
             int x = i%cellCount.x;
             int y = i/cellCount.x;
-            electricFieldArrows[i] = Instantiate(electricFieldArrowPrefab, cellSize * (x * Vector3.right + y * Vector3.forward), Quaternion.identity);
-            magneticFieldArrows[i] = Instantiate(magneticFieldArrowPrefab, cellSize * (x * Vector3.right + y * Vector3.forward), Quaternion.identity);
+            RaycastHit hit;
+            if(Physics.Raycast(cellSize * (x * Vector3.right + y * Vector3.forward) + Vector3.up, Vector3.down, out hit, 100, groundRaycastLayer))
+            {
+                electricFieldArrows[i] = Instantiate(electricFieldArrowPrefab, hit.point, Quaternion.identity);
+                magneticFieldArrows[i] = Instantiate(magneticFieldArrowPrefab, hit.point, Quaternion.identity);
+            }
         }
         UpdateFields();
     }
@@ -101,32 +111,23 @@ public class ParticlePhysicsManager : MonoBehaviour
             electricField[i] = Vector3.zero;
             Vector2 cellPosition = cellSize * new Vector2(i%cellCount.x, i/cellCount.y);
             electricField[i] += ElectricFieldVector(cellPosition);
-            // for(int j=0; j<chargePositions.Count; j++)
-            // {
-            //     Vector2 direction = new Vector2(chargePositions[j].transform.position.x, chargePositions[j].transform.position.z) - cellPosition;
-            //     float r = direction.magnitude / chargePositions[j].range;
-            //      += chargePositions[j].displayCharge * (1-r)*(1-r) * direction.normalized;
-            // }
         }
         for(int i=0; i<magneticField.Length; i++)
         {
             magneticField[i] = Vector3.zero;
             Vector2 cellPosition = cellSize * new Vector2(i%cellCount.x, i/cellCount.y);
             magneticField[i] += MagneticFieldVector(cellPosition);
-            // for(int j=0; j<magneticPositions.Count; j++)
-            // {
-            //     Vector2 direction = new Vector2(magneticPositions[j].transform.position.x, magneticPositions[j].transform.position.z) - cellPosition;
-            //     float r = direction.magnitude;
-            //     magneticField[i] += magneticPositions[j].displayCharge / r * magneticPositions[j].transform.up;
-            // }
         }
+
         for(int i=0; i<magneticField.Length; i++)
         {
+            if(magneticFieldArrows[i] == null)
+                continue;
             if(magneticField[i] != Vector3.zero)
             {
                 magneticFieldArrows[i].rotation = Quaternion.AngleAxis(rotTime * rotationSpeed, magneticField[i]) * Quaternion.LookRotation(magneticField[i]);
                 float force = magneticField[i].magnitude;
-                magneticFieldArrows[i].localScale = Vector3.one * Mathf.Lerp(0, 1, (force - minForce) / (maxForce - minForce)) * magneticArrowScale;
+                magneticFieldArrows[i].localScale = Vector3.one * Mathf.Lerp(0, magneticArrowScale, (force - minMagneticForce) / (maxMagneticForce - minMagneticForce));
             }
             else
             {
@@ -135,6 +136,8 @@ public class ParticlePhysicsManager : MonoBehaviour
         }
         for(int i=0; i<electricField.Length; i++)
         {
+            if(electricFieldArrows[i] == null)
+                continue;
             Vector3 dir = new Vector3(electricField[i].x, 0, electricField[i].y);
             if(dir != Vector3.zero)
                 electricFieldArrows[i].rotation = Quaternion.LookRotation(dir);
@@ -145,31 +148,37 @@ public class ParticlePhysicsManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        for(int i=0; i<particlePositions.Count; i++)
+        for(int i=particlePositions.Count-1; i>=0; i--)
         {
             Vector3 magneticFieldForce = Vector3.Cross(new Vector3(particleVelocities[i].x, 0, particleVelocities[i].y), MagneticFieldVector(particlePositions[i]));
             Vector2 electricFieldForce = ElectricFieldVector(particlePositions[i]);
-            particleVelocities[i] += particleElements[i].charge * (electricFieldForce + new Vector2(magneticFieldForce.x, magneticFieldForce.z)) * Time.fixedDeltaTime;
-            // for(int j=0; j<chargePositions.Count; j++)
-            // {
-            //     Vector2 direction = new Vector2(chargePositions[j].transform.position.x, chargePositions[j].transform.position.z) - particlePositions[i];
-            //     float r2 = direction.sqrMagnitude;
-            //     Vector2 force = forceIntensities * chargePositions[j].displayCharge * particleElements[i].charge / r2 * direction.normalized * Time.fixedDeltaTime;
-                
-            //     force = force.normalized * Mathf.Lerp(0, maxForce, (force.magnitude - minForce) / (maxForce - minForce));
-            //     particleVelocities[i] += force;
-            // }
-            // for(int j=0; j<magneticPositions.Count; j++)
-            // {
-            //     Vector2 direction = new Vector2(magneticPositions[j].transform.position.x, magneticPositions[j].transform.position.z) - particlePositions[i];
-            //     float r2 = direction.sqrMagnitude;
-            //     Vector3 force = magneticIntensities * Vector3.Cross(magneticPositions[j].displayCharge * particleElements[i].charge / r2 * magneticPositions[j].transform.up, new Vector3(particleVelocities[i].x, 0, particleVelocities[i].y));
-            //     force =  force.normalized * Mathf.Lerp(0, maxForce, (force.magnitude - minForce) / (maxForce - minForce));
-            //     particleVelocities[i] += new Vector2(force.x, force.z);
-            // }
+            Vector2 newVelocity = particleVelocities[i] + particleElements[i].charge * new Vector2(magneticFieldForce.x, magneticFieldForce.z) * Time.fixedDeltaTime;
+            newVelocity = newVelocity.normalized * particleVelocities[i].magnitude;
+            particleVelocities[i] = newVelocity + particleElements[i].charge * electricFieldForce * Time.fixedDeltaTime;
 
             particlePositions[i] += particleVelocities[i] * Time.fixedDeltaTime;
-            particleElements[i].transform.position = new Vector3(particlePositions[i].x, 0, particlePositions[i].y);
+            Vector2 arenaCenterPos = new Vector2(arenaCenter.position.x, arenaCenter.position.z);
+            if(!Physics.Raycast(new Vector3(particlePositions[i].x, 0.5f, particlePositions[i].y), Vector3.down, 1, groundRaycastLayer))
+            {
+                Vector3 pos = new Vector3(particlePositions[i].x, 0.5f, particlePositions[i].y);
+                Debug.DrawLine(pos, pos + Vector3.down, Color.white, 3);
+                FallingParticle fallingParticle = particleElements[i].gameObject.AddComponent<FallingParticle>();
+                fallingParticle.velocity = new Vector3(particleVelocities[i].x, 0, particleVelocities[i].y);
+                particlePositions.RemoveAt(i);
+                particleVelocities.RemoveAt(i);
+                particleElements.RemoveAt(i);
+
+                // Vector2 d = particlePositions[i] - arenaCenterPos;
+                // Vector2 normal = d.normalized;
+                // Vector2 tangent = new Vector2(normal.y, -normal.x);
+                // float normalSpeed = Vector2.Dot(particleVelocities[i], normal);
+                // float tangentSpeed = Vector2.Dot(particleVelocities[i], tangent);
+                // particleVelocities[i] = tangentSpeed * tangent - normal * Mathf.Abs(normalSpeed);
+            }
+            else
+                particleElements[i].transform.position = new Vector3(particlePositions[i].x, 0, particlePositions[i].y);
+
+            
         }
     }
 }
