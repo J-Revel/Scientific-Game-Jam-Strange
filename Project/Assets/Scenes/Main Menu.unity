@@ -505,15 +505,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4921224843457794880, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_text
-      value: "Un champ \xE9lectrique peut exister sans qu'il n'y ait de champ magn\xE9tique,
-        si les charges sont fixes. En revanche, un champ magn\xE9tique ne peut exister
-        sans champ \xE9lectrique (circulation de charges). Par simplicit\xE9, nous
-        avons s\xE9par\xE9 les deux ici.\r\nPlacez les champs \xE9lectriques et magn\xE9tiques
-        pour conduire les particules vers leurs \xE9lectrodes respectives.\r\n"
+      value: "Un champ magn\xE9tique est cr\xE9\xE9 par un d\xE9placement de charges,
+        par exemple le long d'un fil \xE9lectrique. Selon le sens du d\xE9placement,
+        le champ magn\xE9tique sera dans un sens ou un autre. On a repr\xE9sent\xE9
+        ici le champ magn\xE9tique cr\xE9\xE9 dans une bobine plac\xE9e sous le plateau.\r\nPlacez
+        les champs magn\xE9tiques positifs et n\xE9gatifs pour conduire les particules
+        vers leurs \xE9lectrodes respectives.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 4921224843457794880, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_fontSize
-      value: 33.45
+      value: 33.65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
@@ -827,15 +828,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4921224843457794880, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_text
-      value: "Une charge positive cr\xE9e un champ \xE9lectrique qui attire les particules
-        n\xE9gatives et repousse les positives ; une charge n\xE9gative cr\xE9\xE9
-        un champ \xE9lectrique qui attire les particules positives et repousse les
-        n\xE9gatives.\r\nPlacez les champs \xE9lectriques positifs et n\xE9gatifs
-        pour conduire les particules vers leurs \xE9lectrodes respectives.\r\n"
+      value: "Une charge positive cr\xE9\xE9 un champ \xE9lectrique qui attire les
+        particules n\xE9gatives et repousse les positives ; une charge n\xE9gative
+        cr\xE9\xE9 un champ \xE9lectrique qui attire les particules positives et
+        repousse les n\xE9gatives.\r\nPlacez les diff\xE9rents champs \xE9lectriques
+        pour conduire les particules positives et n\xE9gatives vers les \xE9lectrodes.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 4921224843457794880, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_fontSize
-      value: 34
+      value: 35.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
@@ -1281,6 +1282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
@@ -2165,10 +2167,10 @@ RectTransform:
   - {fileID: 15045071}
   - {fileID: 860827904}
   - {fileID: 106067623}
-  - {fileID: 1833209270}
-  - {fileID: 912782346}
   - {fileID: 967084797}
   - {fileID: 1735040631}
+  - {fileID: 1833209270}
+  - {fileID: 912782346}
   m_Father: {fileID: 37871233}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2337,7 +2339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4921224843167838778, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4921224843167838778, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2393,7 +2395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4921224843167838778, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 11225
+      value: 13625
       objectReference: {fileID: 0}
     - target: {fileID: 4921224843167838778, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2726,7 +2728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4921224843167838778, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4921224843167838778, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2806,7 +2808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4921224843167838779, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4921224843457794880, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_text
@@ -3255,12 +3257,12 @@ PrefabInstance:
       value: "Une particule peut \xEAtre positive, n\xE9gative ou neutre.\r\nUn champ
         \xE9lectrique va d\xE9placer les particules positives dans une direction
         et les particules n\xE9gatives dans une direction oppos\xE9e. Il n'a aucun
-        effet sur les particules neutres.\r\nConduisez les particules positives vers
-        l'\xE9lectrode positive et n\xE9gatives vers l'\xE9lectrode n\xE9gative.\r\n"
+        effet sur les particules neutres.\r\nConduisez les particules positives et
+        n\xE9gatives vers l'\xE9lectrode.\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4921224843457794880, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_fontSize
-      value: 33.5
+      value: 33.65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
@@ -4799,7 +4801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4921224843167838778, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4921224843167838778, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4879,11 +4881,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4921224843167838779, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4921224843457794880, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_text
-      value: 
+      value: C'est le niveau final ! Mettez en pratique tout ce que vous avez appris
+        jusqu'ici !
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
@@ -5264,7 +5267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4921224843167838778, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4921224843167838778, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5320,7 +5323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4921224843167838778, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 9889
+      value: 12289
       objectReference: {fileID: 0}
     - target: {fileID: 4921224843167838778, guid: 12b669abf33b83446bfc0dd4bca47487, type: 3}
       propertyPath: m_AnchoredPosition.y
